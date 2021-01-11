@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import json
+import os
 
 app = Flask(__name__)
 
@@ -50,6 +51,7 @@ def multiple_predictions():
 
     return y_pred_json
 if __name__ == '__main__':
-    app.run()
+    port = os.environ.get('PORT')
+    app.run(host='0.0.0.0', port=int(port))
 
 #chaecking
