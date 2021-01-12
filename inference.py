@@ -32,7 +32,7 @@ def predict_single():
 
     return 'Prediction for single sample: {} ({})'.format(pred,ans)
 
-@app.route("/multiple_pred", methods=["POST"])
+@app.route("/multiple_pred", methods=['GET', "POST"])
 def multiple_predictions():
     params_json = request.get_json()
     params = json.loads(params_json)
