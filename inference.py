@@ -7,11 +7,16 @@ import json
 import os
 import gunicorn
 
+
 app = Flask(__name__)
 
 X_test = pd.read_csv('X_test.csv')
 model_pkl = open('rf_model.sav', 'rb')
 clf = pickle.load(model_pkl)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
 @app.route('/predict_single')
 def predict_single():
