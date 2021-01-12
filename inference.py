@@ -32,7 +32,7 @@ def predict_single():
 
     return 'Prediction for single sample: {} ({})'.format(pred,ans)
 
-@app.route("/multiple_pred", methods=['GET', "POST"])
+@app.route("/multiple_pred", methods=["POST"])
 def multiple_predictions():
     params_json = request.get_json()
     params = json.loads(params_json)
@@ -53,6 +53,4 @@ def multiple_predictions():
     return y_pred_json
 if __name__ == '__main__':
     port = os.environ.get('PORT')
-    app.run(host='0.0.0.0', port=int(port))
-
-#chaecking
+    app.run(host='0.0.0.0', port=int(port), threaded=True)
