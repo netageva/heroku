@@ -6,6 +6,8 @@ import pickle
 import json
 import os
 import gunicorn
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 
 
 app = Flask(__name__)
