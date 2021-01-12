@@ -58,6 +58,6 @@ def multiple_predictions():
     return y_pred_json
 if __name__ == '__main__':
     port = os.environ.get('PORT')
-    app.run(host='0.0.0.0', port=int(port))
+    app.run(host='0.0.0.0', port=int(port), debug=True)
 
 #chaecking
